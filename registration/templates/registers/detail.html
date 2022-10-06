@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+
+{% block title %}Details | {{dados.nome}} {% endblock %}
+
+{% block content %}
+</div>
+    
+    <div class="detail-box">
+        <h3> Status do funcionário: ATIVO </h3>
+        <div id="photo-box">
+            <img id="photo" src="/media/teste.png"> 
+        </div>
+        
+        <p>Matrícula: {{ dados.id }}</p> 
+        <p>Nome: {{ dados.nome }}</p>
+        <p>Nascimento: {{dados.nascimento}}</p>
+        <p>CPF: {{dados.CPF}}</p>
+        <p>Sexo: {{dados.sexo}}</p>
+        <p>Endereço: {{dados.endereco}}</p>
+        <p>Data de admissão: {{dados.data_admissão}}</p>
+        <p>Contrato nº: {{dados.contrato}}</p>
+        <p>Função: {{ dados.função }}</p>
+        <p>Salário: {{ dados.salario }}</p>
+        <p>Setor: {{dados.setor}}</p>
+        <div id="update-btn">
+            <a class="btn btn-primary" type="button" href="/update/{{ dados.id }}">Atualizar cadastro</a><br>
+        </div>
+        <div id="delete-btn">
+            <a class="btn btn-danger"type="button" href="/delete/{{ dados.id }}">Apagar cadastro</a>
+        </div>
+        <div>
+            <a class="btn btn-success" href="/read/" type="button">Voltar</a>
+        </div>
+    </div>
+{% endblock %}

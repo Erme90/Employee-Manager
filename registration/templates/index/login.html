@@ -1,0 +1,31 @@
+{% extends 'base_index.html' %}
+
+    {% block content %}
+  <div class="container"> 
+    <form class="login-form" method="POST" action="{% url 'login'%}">
+      {% csrf_token %}
+      <!--Campo do username-->
+      <div class="form-group">
+        <input type="username" name="username"class="form-control" id="exampleInputEmail1" placeholder="usuário"> 
+      </div>
+      <!--Campo da senha-->
+      <div class="form-group">
+        <input type="password" name="senha" class="form-control" id="exampleInputPassword1" placeholder="senha">
+      </div>
+      <!--botão de login-->
+      <div id="login-button">
+        <button type="submit" class="btn btn-primary">Entrar</button>
+      </div>
+      <!--botão "esqueci minha senha"-->
+      <div id="forgot-pass-btn">
+        <a class="btn btn-primary" href="/reset_password/">Esqueci minha senha</a>
+      </div>
+       <!--Mensagem de erro caso a autenticação falhe-->
+        <p class="msg-erro">{{ msg }}</p>
+    </form>
+    <!--Botão de alteração senha-->
+    
+  </div>
+ 
+    {% endblock %}
+  

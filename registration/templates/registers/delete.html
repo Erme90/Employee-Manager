@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+{% block title %}Delete | {{registro.nome}} {% endblock %}
+{% block content %}
+<div id="delete-box">
+    <form method="POST">
+        {% csrf_token %}
+        Apagar cadastro de {{ registro }}?
+        
+        <input class="btn btn-primary" type="submit" value="Sim" onclick="msg()"/>
+        <a class="btn btn-danger" type="button" href="/detail/{{ registro.id }}">Não</a>
+    </form>
+</div>
+    <script>
+        function msg(){
+            alert('Registro apagado com sucesso!')
+        }
+    </script>
+{% endblock%}

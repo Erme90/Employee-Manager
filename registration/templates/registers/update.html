@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+{% load crispy_forms_tags %}
+{% block title %} update | {{dados.nome}} {% endblock %}
+    
+    {% block content %}
+    
+    <h3> O que deseja fazer com este cadastro? </h3>
+    <p id="update-msg">{{ msg }}</p>
+    <div class="update-box">
+        <form targe="_blank" class="update-form" method="POST">
+            {% csrf_token%}
+
+            <div>
+                <a id="update-photo" alt="employee picture" value="foto"></a>
+            </div>
+
+            <p style="color:black">Matrícula: {{dados.id}}</p>
+
+            {{ form | crispy }}<!--O formulários é renderizado através deste template tag django-->
+
+            <input id="update-input" class="btn btn-primary" type="submit" value="Atualizar"/>
+        </form>            
+            <a class="btn btn-success" href="/detail/{{ dados.id }}" type="button">Voltar</a>
+    </div>
+    {% endblock %}

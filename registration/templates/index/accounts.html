@@ -1,0 +1,34 @@
+{% extends 'base_index.html' %}
+{% load static %}
+
+{% block content %}
+<div class="container">
+    <form class="account-form" method="POST" action="{% url 'accounts'%}">
+        {% csrf_token%}
+
+      <label>Username</label>
+      <div>
+        {{ account_form.username.errors}}
+        {{ account_form.username }}
+      </div>
+      <label>Senha</label>
+      <div>
+        {{ account_form.password1.errors}}
+        {{ account_form.password1 }}
+      </div>
+      <label>Confirmar senha</label>
+      <div>
+        {{ account_form.password2.errors}}
+        {{ account_form.password2 }}
+      </div>
+      <div class="account-button">
+        <button class="btn btn-primary" type="submit">Criar usuário</button>
+      </div>
+      <div class="success-msg">
+        <p>{{ msg }}</p>
+      </div>
+    </form>
+</div>
+
+
+{% endblock %}
