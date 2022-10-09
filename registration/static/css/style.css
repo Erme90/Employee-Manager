@@ -1,0 +1,320 @@
+body{
+    margin:0;
+}
+
+a {
+    text-decoration:none;
+}
+
+li {
+    list-style-type:none;
+}
+
+/*base index e base*/
+.body-base {
+    display: flex;
+    flex-direction: column;
+    min-height: 100%;
+}
+
+.footer-base {
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+    left: 0;
+}
+
+
+.footer-base-index {
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+    left: 0;
+}
+
+.powered{
+    color:black;
+    text-align: center;
+    background-color: aliceblue;
+    
+}
+
+.body-base, body {
+    background: url("/static/img/desk.jpg") 50% no-repeat fixed;
+    background-size: cover;
+    color: white;
+    height: auto;
+    padding: 20px 0 0 0;   
+}
+
+.body-index{
+    background: url("/static/img/desk2.jpg") 100% no-repeat fixed;
+    background-size: cover;
+    color: white;
+    height: auto;
+    padding: 20px 0 0 0; 
+    margin-top: 0%;
+    width: 100vw;
+    height: 100vh;
+}
+
+#footer-list{
+    display: flex;
+    margin:auto;
+   
+}
+
+/*Container de imagem de fundo (div) da base.html*/
+
+/*home*/
+.welcome{  
+    background-color: #0d6efd;
+   
+    
+}
+.block-content{
+    width: 75vw;
+    height: 60vh;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+/*accounts*/
+label{
+    color: black;
+}
+.container{
+    width: 80vw;
+    height: 60vh;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    
+    
+}
+.account-form{
+    width: 212px;
+    height: auto;
+    border:1px solid rgba(252, 247, 247, 0.5);
+    background: rgba(252, 247, 247, 0.4);  
+  
+}
+
+.account-form input{
+    width: 100%;
+}
+
+.account-button{
+    margin-top: 10px;
+    margin-left: 50px;
+}
+
+.success-msg{
+    background: #59fd0d6c;
+    text-align: center;
+    margin-top:30px; 
+}
+
+/*login*/
+
+.login-form{
+    width: auto;
+    height: auto;
+    border:1px solid rgba(252, 247, 247, 0.5);
+    background: rgba(252, 247, 247, 0.4);  
+}
+
+.login-form input{
+    margin-top:10px;
+    width: 100%;
+}
+
+#login-button{
+    display: inline;
+    margin: 5px;
+    padding: 6px;
+        
+}
+
+#forgot-pass-btn{  
+    display: inline;
+    margin: 5px;
+}
+
+.msg-erro{
+    margin-top: 100;
+    text-align: center;
+    color:#ff0000;
+}
+
+/*Formulário de reset de senha do usuário*/
+
+.reset-form{
+    
+    margin-right: 25px;
+    position: absolute;
+    align-items: center;
+    justify-content: space-around;
+    max-width: 212px;
+    height: 140px;
+    border:1px solid rgba(252, 247, 247, 0.5);
+    background: rgba(252, 247, 247, 0.4); 
+}
+.reset-form input{
+    margin-top:5px;
+    width: 100%;
+}
+.reset-pass-btn{
+    width:130px; 
+    height:20px;
+    margin-top: 20px;
+    margin-left: 50px;
+    
+}
+
+/*Create*/
+
+.form-control-lg{
+    margin-left: 25%;
+    margin-bottom: 80px;
+    align-items: center;
+    max-width: 50%;
+    height: 100%;
+    border:1px solid rgba(252, 247, 247, 0.5);
+    background: rgba(252, 247, 247, 0.4); 
+}
+
+#create-msg{
+    color: green;
+}
+
+#photo-box{
+    border:1px solid black;
+    max-width:200px;
+    height: 200px;    
+}
+
+#photo{
+    border:1px solid black;
+    width: 100%;
+    height: 100%;    
+}
+
+
+#create-btn{
+    display: grid;
+}
+
+
+/*Read*/
+
+.read-list{
+    
+    margin-left: 2%;
+    margin-bottom: 5px;
+    align-items: center;
+    max-width: 40%;
+    height: 100%;
+    border:1px solid rgba(252, 247, 247, 0.5);
+    background: rgba(252, 247, 247, 0.4); 
+}
+
+.read-box{
+    margin-top: 10px;
+}
+
+#detail-btn{
+    float: inline-end;
+    padding: 0%;
+    
+}
+
+#search-btn{
+    margin-right: 10px;
+}
+
+/*detail*/
+
+.detail-box{
+    
+    margin-left: 25%;
+    margin-bottom: 80px;
+    align-items: center;
+    max-width: 50%;
+    height: 100%;
+    color: black;
+    border:1px solid rgba(252, 247, 247, 0.5);
+    background: rgba(252, 247, 247, 0.4); 
+}
+#update-btn{
+    display: grid;
+}
+#delete-btn{
+    display: grid;
+}
+
+/*Update*/
+
+.update-box{
+    margin-left: 25%;
+    margin-bottom: 80px;
+    align-items: center;
+    max-width: 50%;
+    height: 100%;
+    border:1px solid rgba(252, 247, 247, 0.5);
+    background: rgba(252, 247, 247, 0.4); 
+}
+
+#update-input{
+    width: 100%;
+    margin-top: 25px;
+    margin-bottom: 15px;
+}
+
+/*Botão voltar na página de update*/
+.update-box a{
+    display: grid;
+
+}
+
+#update-msg{
+    color: rgb(133, 197, 133);
+    text-align: center;
+    background: rgba(252, 247, 247, 0.2); 
+    
+}
+
+#update-photo{
+    border:1px solid black;
+    max-width:200px;
+    height: 200px; 
+}
+
+/*Delete*/
+
+#delete-box{
+    margin-left: 25%;
+    margin-top: 20%;
+    align-items: center;
+    max-width: 50%;
+    height: 100%;
+    color:black;
+    border:1px solid rgba(252, 247, 247, 0.5);
+    background: rgba(252, 247, 247, 0.4); 
+}
+
+/*Logout*/
+
+#logout-box{
+    margin-left: 0%;
+    margin-top: 20%;
+    align-items: center;
+    text-align: center;
+    max-width:100%;
+    height: 100%;
+    color:black;
+    border:1px solid rgba(252, 247, 247, 0.5);
+    background: rgba(252, 247, 247, 0.4); 
+}

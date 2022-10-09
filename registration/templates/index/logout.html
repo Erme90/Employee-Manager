@@ -1,0 +1,9 @@
+{% extends 'base.html' %}
+{% block title %}Logout | {{nome}} {% endblock %}
+{% block content %}
+<div id="logout-box">
+    Deseja sair?
+    <a class="btn btn-primary" type="button" href="/logout">Sim</a>
+    <a class="btn btn-danger" type="button" href="/home/">Não</a>
+</div>
+{% endblock%}
