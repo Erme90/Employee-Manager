@@ -5,7 +5,7 @@ from django.db import models
 #O model, é onde se cria o banco de dados
 
 
-
+#este model é para criação de registro para funcionários novos.
 class Register_Model(models.Model):
     SEXO_CHOICES = (
         ('F', 'Feminino'),

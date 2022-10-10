@@ -1,3 +1,4 @@
+import email
 from PIL import Image
 import os
 from django.conf import settings
@@ -6,6 +7,8 @@ from django.utils import timezone
 from django.contrib import messages
 from django.contrib.auth import login,logout, authenticate, update_session_auth_hash
 from django.contrib.auth.decorators import login_required
+from django.views.decorators.http import require_POST
+
 from django.contrib.auth.forms import UserCreationForm, PasswordChangeForm
 from django.shortcuts import render,get_object_or_404,redirect
 from employee_manager.forms import SignUpForm
@@ -16,7 +19,7 @@ from registration.forms import (
     Register_Model,    
     )
 
-
+@require_POST
 def accounts_view(request):
     return render(request,'index/accounts.html')
 
