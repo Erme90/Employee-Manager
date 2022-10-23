@@ -1,10 +1,11 @@
-from PIL import Image
+from django.http import HttpResponse
 import os
 from django.conf import settings
 from django.utils import timezone
 
 from django.contrib import messages
 from django.contrib.auth import login,logout, authenticate, update_session_auth_hash
+from django.contrib.auth.models import User
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.forms import UserCreationForm, PasswordChangeForm
 from django.shortcuts import render,get_object_or_404,redirect
@@ -18,7 +19,23 @@ from registration.forms import (
 
 
 def accounts_view(request):
-    return render(request,'index/accounts.html')
+    if request.method == 'GET':
+        return render(request,'index/accounts.html')
+    else:
+        name = request.POST.get('name')
+        username = request.POST.get('user') 
+        password = request.POST.get('password-conf')
+        email = request.POST.get('email')
+
+        user = User.objects.filter (username=username).first()
+
+        if user:
+            return HttpResponse('Já existe esse usuário')
+        
+        user = User.objects.create_user(name=name, username=username, password=password, email=email)
+        user.save()
+
+        return HttpResponse ('Usuário cadastrado com sucesso')
 
 def login_view(request):
     if request.method == 'GET':                                     # Se o metodo de requisição for igual a "GET" (buscar a página pela URL)

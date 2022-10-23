@@ -2,64 +2,17 @@
 {% load static %}
 
 {% block content %}
-<div class="container">
-<<<<<<< HEAD
-    <form class="account-form" method="POST" action="{% url 'accounts'%}">
-        {% csrf_token%}
-
-      <label>Username</label>
-      <div>
-        {{ account_form.username.errors}}
-        {{ account_form.username }}
-      </div>
-      <label>Senha</label>
-      <div>
-        {{ account_form.password1.errors}}
-        {{ account_form.password1 }}
-      </div>
-      <label>Confirmar senha</label>
-      <div>
-        {{ account_form.password2.errors}}
-        {{ account_form.password2 }}
-      </div>
-      <div class="account-button">
-        <button class="btn btn-primary" type="submit">Criar usuário</button>
-      </div>
-      <div class="success-msg">
-        <p>{{ msg }}</p>
-      </div>
-    </form>
-=======
-
-<form method="POST" action=".">
-  {% csrf_token %}
-
-  <div class="form-floating mb-1">
-    <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com">
-    <label for="floatingInput">Email</label>
+<form name="form-users" id="formUsers" method="POST" action="{% url 'accounts' %}">
+  <div class="col-10 mt-5 m-auto">
+    {% csrf_token %}
+      <input class="form-control mt-4" type="text" name="name" id="name" placeholder="nome">
+      <input class="form-control mt-4" type="text" name="user" id="user" placeholder="nome do usuário">
+      <input class="form-control mt-4" type="password" name="password" id="password" placeholder="Senha">
+      <input class="form-control mt-4" type="password" name="password-conf" id="password-conf" placeholder="Repita a senha">
+      <input class="form-control mt-4" type="email" name="email" id="email" placeholder="email...">
+      <input class="btn btn-primary" type="submit" value="cadastrar">
   </div>
-
-  <div class="form-floating mb-1">
-    <input type="password" class="form-control" id="floatingPassword" placeholder="Password">
-    <label for="floatingPassword">Nome</label>
-  </div>
-
-  <div class="form-floating mb-1">
-    <input type="password" class="form-control" id="floatingPassword" placeholder="Password">
-    <label for="floatingPassword">Senha</label>
-  </div>
-
-  <div class="form-floating mb-1">
-    <input type="password" class="form-control" id="floatingPassword" placeholder="Password">
-    <label for="floatingPassword">Confirme a senha</label>
-  </div>
-
-  <button class="btn btn-primary">Criar usuário</button>
-
 </form>
-
->>>>>>> 3e1fed7 (Accounts)
-</div>
 
 
 {% endblock %}

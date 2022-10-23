@@ -20,10 +20,10 @@ from .views import (
 )
 
 urlpatterns = [
-    path('', login_view, name='login'),
+    path('', login_view, name='login'),#login
     path('logout_template/', logout_template_view,name='logout_template'),
-    path('logout', logout_view, name='logout'),
-    path('accounts/', accounts_view, name='accounts'),
+    path('logout', logout_view, name='logout'),#logout
+    path('accounts/', accounts_view, name='accounts'), #cadastro
     path('password_change/', password_change_view, name='password-change'),
     path('reset_password/', reset_password_view, name='reset-password'),
     path('home/', home_view, name='home'),

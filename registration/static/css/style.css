@@ -85,7 +85,7 @@ label{
     color: black;
 }
 .container{
-    width: 80vw;
+    width: 90vw;
     height: 60vh;
     display: flex;
     flex-direction: row;
@@ -104,6 +104,7 @@ label{
 
 .account-form input{
     width: 100%;
+    ;
 }
 
 .account-button{
