@@ -73,6 +73,26 @@ def reset_password_view(request):
 def about_view(request):
     return render(request,'index/about.html')
 
+def read_register_only(request):
+    template = 'registers/read_register_only.html' #variavel que guarda a URL do template
+    objects = Register_Model.objects.all() #traz todos os cadastros de funcionários
+    search = request.GET.get('search') #parametro de GET
+    
+    if search and search.isdigit():#se o search receber um valor e este valor for um digito:
+        objects=objects.filter(id=search)#se for digito, ele procura pela matrícula
+    elif search:
+        objects=objects.filter(nome__icontains=search)#se for string, ele procura pelo nome.
+      
+
+    context = {
+        'objects':objects,
+    }
+    return render(request,template,context)
+
+
+
+
+
 @login_required(login_url="/login/")
 def home_view(request):
     timedate = timezone.now()

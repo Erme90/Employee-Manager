@@ -1,0 +1,24 @@
+{% extends 'registers_read.html' %}
+{% load static %}
+{% block title %}Employees{% endblock %}
+    {% block content %}
+    <div id="search-btn">
+        <form id="search-form" class="d-flex" role="search" method="GET" actiton=".">
+            <input class="form-control me-2" type="search" placeholder="Localizar cadastro" aria-label="Search" id="search" name="search">
+            <button class="btn btn-success" id="search-btn" type="submit">Busca</button>
+        </form>
+    </div>
+    <div class="read-box">
+        {% for register in objects %}
+            <ul class="read-list">
+                <div>
+                    <li>
+                        Matricula: {{ register.id }} <br>
+                        Nome: {{ register.nome }}
+                       
+                    </li>
+                </div>
+            </ul>
+        {% endfor %}
+    </div>
+    {% endblock %}
