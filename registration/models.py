@@ -39,6 +39,6 @@ class Register_Model(models.Model):
     função = models.CharField(max_length=15, choices = FUNCAO_CHOICES, null=False)
     salario = models.DecimalField(max_digits=5, decimal_places=3)
     setor = models.CharField(max_length=12, choices=SETOR_CHOICES, null=False)
-
+   
     def __str__(self):
         return self.nome
