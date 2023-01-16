@@ -1,8 +1,6 @@
 from django.http import HttpResponse
-import os
 from django.conf import settings
 from django.utils import timezone
-
 from django.contrib import messages
 from django.contrib.auth import login,logout, authenticate, update_session_auth_hash
 from django.contrib.auth.models import User
@@ -30,7 +28,7 @@ def accounts_view(request):
         user = User.objects.filter (username=username).first()
 
         if user:
-            return HttpResponse('Já existe esse usuário')
+            return HttpResponse('Este usuário já existe')
         
         user = User.objects.create_user(name=name, username=username, password=password, email=email)
         user.save()
@@ -88,11 +86,7 @@ def create_register(request):
     }
     if request.method == 'POST':
         form = Register_Form(request.POST)
-        file = request.FILES.get('myfile')
-
-        img = Image.open(file)
-        path = os.path.join(settings.BASE_DIR, f'media/teste.png')
-        img = img.save(path)
+        
 
         if form.is_valid():
             form.save()

@@ -5,7 +5,7 @@
 <form name="form-users" id="formUsers" method="POST" action="{% url 'accounts' %}">
   <div class="col-10 mt-5 m-auto">
     {% csrf_token %}
-      <input class="form-control mt-4" type="text" name="name" id="name" placeholder="nome">
+      <input class="form-control mt-4" type="text" name="name" placeholder="nome">
       <input class="form-control mt-4" type="text" name="user" id="user" placeholder="nome do usuário">
       <input class="form-control mt-4" type="password" name="password" id="password" placeholder="Senha">
       <input class="form-control mt-4" type="password" name="password-conf" id="password-conf" placeholder="Repita a senha">

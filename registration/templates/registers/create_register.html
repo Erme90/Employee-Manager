@@ -7,26 +7,27 @@
 
     <div class="form-control form-control-lg">
         
-        <div id="photo-box">
-        </div>
+        
         
         <br>
 
         <form action="." method="POST" enctype="multipart/form-data">
-            {% csrf_token%}
-
-            <input type="file" name="myfile">
-            <input class="btn btn-primary" type="submit" value="upload">
+            {% csrf_token%}          
+            
 
         </form>
+
         <form class="form" method="POST" action="." >
             {% csrf_token%}
-            {{ form | crispy }}  
-        </form>
-        <div>
+            {{ form | crispy }} 
+            
             <div id="create-btn">
                 <input class="btn btn-primary" type="submit" value="Cadastrar">
             </div>
+        </form>
+
+        <div>
+           
             <div>
                 <p id="create-msg">{{ msg }}</p>
             </div>
